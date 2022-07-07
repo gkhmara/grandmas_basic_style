@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <%# <link rel="icon" href="../../assets/images/favicon.jpg"> %>
+  <%# <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="text-effect">
+      <h1 class="neon" data-text="Grandma's Neon Farmhouse" contenteditable>Neon</h1>
+      <div class="gradient"></div>
+      <div class="spotlight"></div>
+    </div>
+
+    <header class="topnav container">
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= flash[:alert] %>
+            <%= flash[:notice] %>
+
+            <ul>
+              <li><%= link_to "HOME", "/", class: "btn btn-default" %></li>
+              <li><%= link_to "MENU", "/menu", class: "btn btn-default" %></li>
+              <li><%= link_to "ABOUT", "", class: "btn btn-default" %></li>
+              <li><%= link_to "ORDER", "/orders", class: "btn btn-default" %></li>
+              <li><%= link_to "SIGN-IN", new_user_session_path, class: "btn btn-default" %></li>
+              <li><%= link_to "SIGN-OUT", destroy_user_session_path, :method => :delete, class: "btn btn-default"  %></li>
+            </ul>
+      </nav>
+    </header>
+
+
+
+
+
+      <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="icon-bar">
+          <a href="https://www.instagram.com/grandmas_neon_farmhouse/" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+  </body>
+</html>
